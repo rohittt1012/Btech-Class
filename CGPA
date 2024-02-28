@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int nsub;
+    double credit, grades, cgpa;
+    cout << "Enter Number of Subject: " << endl;
+    cin >> nsub;
+
+    double totalcredit = 0 ;
+    double totalgradepoint = 0;
+
+    for( int i=1; i<=nsub; ++i) {
+     double credit, grades;
+     
+        cout << "credit" << i << endl;
+        cin >> credit;
+        cout << "grades" << i << endl;
+        cin >> grades;
+        totalcredit += credit;
+        totalgradepoint += credit * grades;
+    }
+    if( totalcredit > 0 ){
+        double cgpa = totalgradepoint/totalcredit;
+        cout << "CGPA : " << cgpa << endl;
+    } else {
+        cout << "Credit does not 0 " << endl;
+    }
+    // cout << "totalcredit : " << totalcredit << endl;
+    // cout << "totalgradepoint : " << totalgradepoint << endl;
+    return 0;
+}
