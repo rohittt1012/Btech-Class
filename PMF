@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+// Factorial
+unsigned long long factorial(int n){
+    if ( n==0 || n==1 ) 
+        return 1;
+    unsigned long long fact = 1;
+    for ( int i = 2; i <= n; ++i)
+        fact *=i;
+    return fact;
+}
+// calculate the poisson probability mass function ( PMF )
+double poissonPMF( int k, double lambda ){
+    return exp(-lambda) * pow( lambda, k) / factorial(k);
+}
+int main() {
+    int k;
+    double lambda;
+
+    // input parameters
+    cout << "Enter the value of k : " << endl;
+    cin >> k;
+    cout << "Enter the value of lambda : " << endl;
+    cin >> lambda;
+
+    // calculate and display the poisson PMF
+    double pmf = poissonPMF(k, lambda);
+    cout << "P(X = " << k << ") = " << pmf << endl;
+    return 0;
+}
