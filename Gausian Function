@@ -1,0 +1,26 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+//Define the Gaussian function
+double gaussian(double x, double mean, double stddev) {
+    return exp(-pow(x -mean, 2) / (2 * pow(stddev, 2))) / (stddev * sqrt( 2 * M_PI));
+}
+
+int main() {
+    // input mean and standard deviation
+    double x,mean,stddev;
+    cout << "Enter the mean : " << endl;
+    cin >> mean;
+    cout << "Enter the Standard Deviation : " << endl;
+    cin >> stddev;
+
+    // input x for which to calculate the gaussian value
+    cout << "Enter the value of x : " << endl;
+    cin >> x;
+
+    // calculate and output tha gaussian value
+    double result = gaussian(x, mean, stddev);
+    cout << "The Gaussian value for X = " << x << " is : " << result << endl;
+     
+    return 0;
+}
