@@ -1,0 +1,59 @@
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+struct task{
+    string discription;
+    bool completed;
+    task(string desc) : description(desk),completed(false) {}
+};
+void addtask(vector<task>& todolist, const string& description ){
+    todolist.push_back(task(description));
+    cout << "Task Added : " << description << endl;
+}
+
+
+int main(){
+    vector<task>todolist;
+    int choice;
+    do{
+        cout << "Menu : " << endl;
+        cout << "1.Add Task" << endl;
+        cout << "2.Complete Tsak " << endl;           
+        cout << "3.Display to do list " << endl;
+        cout << "4.exit " << endl;
+        cout << "Enter Your Choice : " << endl;
+        cin >> choice;
+
+        switch(choice) {
+            case 1:{
+                string description;
+                cout << "Enter Task Description : " << endl;
+                cin.ignore();
+                getline(cin,description);
+                addtask(todolist,description);
+                break;
+            }
+            case 2:{
+                int index;
+                cout << "Enter Task Index to Mark as Complete";
+                cin >> "Index";
+                Completetask(todolist,index -1);
+                break;
+            }
+            case 3:{
+                displaytodolist(todolist);
+                break;
+            }
+            case 4:{
+                cout << "Exit..." << endl;
+                break;
+            }
+            default:{
+                cout << "Invalid Choice, Please try again. " << endl;
+            }
+        }
+    }
+    return 0;
+}
