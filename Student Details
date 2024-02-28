@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class student {
+    private:
+        char name[50];
+        int rolln;
+        int total;
+        float perc;
+    public:
+        void getdetails(void);
+        void putdetails(void);
+};
+void student :: getdetails(void){
+    cout << "Enter Name : " << endl;
+    cin >> name;
+    cout << "Enter Roll No. : " << endl;
+    cin >> rolln;
+    cout << "Enter Total Marks out of 500 : " << endl;
+    cin >> total;
+    perc = (float)total / 500 * 100;
+}
+void student :: putdetails(void){
+    cout << "Student Details --" << endl;
+    cout << "Name : " << name << endl << "Roll No. : " << rolln 
+    << endl << "Total Marks : " << total << endl << 
+    "Percaintage : " << perc << endl;
+}
+int main() {
+    student st;
+    st.getdetails();
+    st.putdetails();
+    return 0;
+}
